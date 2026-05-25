@@ -33,13 +33,11 @@ export default function Login() {
     }
   };
 
-  // Social Login Handler Engine
   const handleSocialLogin = async (provider: 'google' | 'facebook') => {
     setMessage(`Connecting to ${provider}...`);
     const { error } = await supabase.auth.signInWithOAuth({
       provider: provider,
       options: {
-        // Redirects users right back to your dashboard page after successful social login
         redirectTo: 'http://localhost:3000/dashboard',
       },
     });
@@ -62,8 +60,11 @@ export default function Login() {
         <div className="bg-white py-8 px-4 shadow sm:rounded-xl sm:px-10 border border-slate-200">
           <form className="space-y-6" onSubmit={handleLogin}>
             <div>
-              <label className="block text-sm font-medium text-slate-700">Email address</label>
+              <label htmlFor="email" className="block text-sm font-medium text-slate-700">
+                Email address
+              </label>
               <input
+                id="email"
                 type="email"
                 required
                 value={email}
@@ -73,8 +74,11 @@ export default function Login() {
             </div>
 
             <div>
-              <label className="block text-sm font-medium text-slate-700">Password</label>
+              <label htmlFor="password" className="block text-sm font-medium text-slate-700">
+                Password
+              </label>
               <input
+                id="password"
                 type="password"
                 required
                 value={password}
@@ -94,7 +98,6 @@ export default function Login() {
             </div>
           </form>
 
-          {/* Elegant Visual Splitter Line */}
           <div className="mt-6 relative">
             <div className="absolute inset-0 flex items-center">
               <div className="w-full border-t border-slate-200"></div>
@@ -104,7 +107,6 @@ export default function Login() {
             </div>
           </div>
 
-          {/* Social Sign-In Buttons Panel */}
           <div className="mt-6 grid grid-cols-2 gap-3">
             <button
               onClick={() => handleSocialLogin('google')}
