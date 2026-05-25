@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
+// Pasting strings directly guarantees Next.js can see them right now
+const supabaseUrl = 'https://kdqkazrwfinikfjauicc.supabase.co';
+const supabaseAnonKey = 'sb_publishable_0XF2sxeGfN-lA5WNp-hMNg_ls0wPwqv';
 
-// This single 'supabase' object will be your developer handle to pull and push data
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
