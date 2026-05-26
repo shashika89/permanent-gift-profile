@@ -8,7 +8,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./vitest.setup.ts'],
     globals: true,
-    exclude: ['**/node_modules/**', '**/tests/**'], // 👈 Add this line to skip Playwright tests
+    exclude: ['**/node_modules/**', '**/tests/**'],
   },
   resolve: {
     alias: {

@@ -1,6 +1,7 @@
-test: {
-    environment: 'jsdom',
-    setupFiles: ['./vitest.setup.ts'],
-    globals: true,
-    exclude: ['**/node_modules/**', '**/tests/**'], // 👈 Add this line to skip Playwright tests
+const config = {
+  plugins: {
+    '@tailwindcss/postcss': {}, // Explictly register the Tailwind v4 compilation plugin
   },
+};
+
+export default config;
